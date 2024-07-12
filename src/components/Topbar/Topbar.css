@@ -1,0 +1,22 @@
+.topbar {
+    min-height: 40px;
+    background-color: var(--blue);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.topbar__logo {
+    color: var(--background-primary);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.topbar__open-modal-button {
+    color: var(--blue);
+    background-color: var(--background-primary);
+
+    &:hover {
+        filter: brightness(92%);
+    }
+}
