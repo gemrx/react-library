@@ -17,7 +17,6 @@ export function Book({ id, title, author, numberOfPages, onRemoveBook }) {
     }
 
     function handleRemove() {
-        console.log('hola');
         onRemoveBook(id);
     }
 

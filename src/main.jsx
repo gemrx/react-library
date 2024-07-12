@@ -20,15 +20,17 @@ function App() {
     }
 
     function removeBook(id) {
-        setBooks(books.filter((book) => {
-            return book.id !== id;
-        }));
+        setBooks(
+            books.filter((book) => {
+                return book.id !== id
+            })
+        );
     }
 
     return (
         <BooksWrapper>
             {
-                defaultBooks.map((book) => (
+                books.map((book) => (
                     <Book
                         key={book.id}
                         id={book.id}
