@@ -1,10 +1,3 @@
-.books-wrapper {
-    padding: 20px;
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-}
-
 .book {
     border: 6px double var(--blue); 
     background-color: #d1d7e6;

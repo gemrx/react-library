@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Topbar from './components/Topbar/Topbar.jsx';
-import { BooksWrapper, Book } from './components/Book/Book.jsx';
+import Book from './components/Book/Book.jsx';
 import { useState } from 'react';
 import './index.css';
 
@@ -28,7 +28,7 @@ function App() {
     }
 
     return (
-        <BooksWrapper>
+        <div className='books-wrapper'>
             {
                 books.map((book) => (
                     <Book
@@ -41,7 +41,7 @@ function App() {
                     />
                 ))
             }
-        </BooksWrapper>
+        </div>
     );
 }
 

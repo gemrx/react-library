@@ -1,15 +1,7 @@
 import { useState } from 'react';
 import './Book.css';
 
-export function BooksWrapper({children}) {
-    return (
-        <div className="books-wrapper">
-            {children}
-        </div>
-    );
-}
-
-export function Book({ id, title, author, numberOfPages, onRemoveBook }) { 
+export default function Book({ id, title, author, numberOfPages, onRemoveBook }) { 
     const [readStatus, setReadSatus] = useState('Not read yet');
 
     function toggleReadStatus() {
