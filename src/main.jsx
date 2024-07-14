@@ -15,11 +15,11 @@ const defaultBooks = [
 function App() {
     const [books, setBooks] = useState(defaultBooks);
 
-    function addBook() {
+    function handleAddBook() {
         console.log('This is supposed to add a book');
     }
 
-    function removeBook(id) {
+    function handleRemoveBook(id) {
         setBooks(
             books.filter((book) => {
                 return book.id !== id
@@ -37,7 +37,7 @@ function App() {
                         title={book.title}
                         author={book.author}
                         numberOfPages={book.numberOfPages}
-                        onRemoveBook={removeBook}
+                        onRemoveBook={handleRemoveBook}
                     />
                 ))
             }
