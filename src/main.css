@@ -3,7 +3,8 @@
 :root {
     --background-primary: #f5f6fa;
     --foreground-primary: #151823;
-    --blue: #596d9e; 
+    --blue: #596d9e;
+    --dark-blue: #39466b;
     --lightblue: #d1d7e6;
     --red: #e7175a;
 }
@@ -19,6 +20,27 @@ body {
     background-color: var(--background-primary);
 }
 
+.topbar {
+    min-height: 40px;
+    background-color: var(--blue);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.topbar__logo {
+    color: var(--background-primary);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.books-wrapper {
+    padding: 20px;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+}
+
 button {
     border: 1px solid var(--background-primary);
     outline: none;
@@ -30,11 +52,9 @@ button {
     &:hover {
         cursor: pointer; 
     }
+
+    &:focus {
+        border: 2px solid var(--foreground-primary);
+    }
 }
 
-.books-wrapper {
-    padding: 20px;
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-}

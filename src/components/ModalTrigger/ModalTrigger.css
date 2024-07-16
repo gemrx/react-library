@@ -1,0 +1,147 @@
+.modal__open-button {
+    color: var(--blue);
+    background-color: var(--background-primary);
+
+    &:hover {
+        filter: brightness(92%);
+    }
+}
+
+.modal {
+    width: min(450px, 100%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    border-radius: 4px;
+    padding: 1.5rem;
+    background-color: var(--background-primary);
+}
+
+.modal::backdrop {
+    background-color: #151823;
+    opacity: 0.7;
+}
+
+.modal__content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.modal__header {
+    display: flex;
+    justify-content: space-between;
+    
+    .modal__title {
+        font-size: 20px;
+        font-weight: 600; 
+    }
+
+    .modal__close-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.2em;
+        background-color: transparent;
+
+        svg {
+            width: 1.2rem;
+            height: 1.2rem;
+
+            path {
+                stroke: var(--foreground-primary);  
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+
+            svg path {
+                stroke: var(--red);
+            }
+        }
+
+        
+    }
+
+    /* .modal__close-button {
+        width: 1.1rem;
+        height: 1.1rem;
+
+        path {
+            stroke: var(--foreground-primary);  
+        }
+
+        &:hover {
+            cursor: pointer;
+
+            path {
+                stroke: var(--red);  
+            }
+        }
+    } */
+}
+
+.form {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 8px;
+    row-gap: 10px;
+    
+    .form__row {
+        grid-column: span 2;
+        column-gap: inherit;
+        display: grid;
+        grid-template-columns: subgrid;
+    }
+
+    .form__label {
+        color: var(--foreground-primary);
+    }
+
+    .form__input {
+        font-size: 1rem;
+        padding: 6px;
+        border: 1px solid hsl(240, 6%, 82%);
+        border-radius: 4px;
+
+        &:focus {
+            border-color: var(--blue);
+            outline: 1px solid var(--foreground-primary);
+        }
+        
+    }
+}
+
+.modal__footer {
+    margin-left: auto;
+    display: flex;
+    gap: 10px;
+
+    .modal__cancel-button, 
+    .modal__add-book-button {
+        &:hover {
+            border-color: var(--foreground-primary);
+        }
+    }
+
+    .modal__cancel-button {
+        color: var(--foreground-primary);
+        border-color: hsl(240, 6%, 82%); 
+        background-color: var(--background-primary);
+    }
+
+    .modal__add-book-button {
+        border-color: var(--blue);
+        color: var(--background-primary);
+        background-color: var(--blue);
+    }
+
+    .modal__cancel-button, 
+    .modal__add-book-button {
+        &:focus {
+            border-color: var(--foreground-primary);
+        }
+    }
+}

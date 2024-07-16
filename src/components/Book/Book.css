@@ -9,9 +9,9 @@
 }
 
 .book__delete-button {
-    border: none;
+    border-color: var(--red);   
     align-self: flex-end;
-    padding: 6px 6px;
+    padding: 6px;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Topbar from './components/Topbar/Topbar.jsx';
+import ModalTrigger from './components/ModalTrigger/ModalTrigger.jsx';
 import Book from './components/Book/Book.jsx';
 import { useState } from 'react';
-import './index.css';
+import './main.css';
+
 
 const defaultBooks = [
     { id: crypto.randomUUID(), title: 'The Hobbit', author: 'J.R.R Tolkien', numberOfPages: 320 },
@@ -15,8 +16,16 @@ const defaultBooks = [
 function App() {
     const [books, setBooks] = useState(defaultBooks);
 
-    function handleAddBook() {
-        console.log('This is supposed to add a book');
+    function handleAddBook(title, author, numberOfPages) {
+        setBooks([
+            ...books, 
+            {
+                id: crypto.randomUUID(), 
+                title: title, 
+                author: author, 
+                numberOfPages: numberOfPages
+            }
+        ]);
     }
 
     function handleRemoveBook(id) {
@@ -28,7 +37,12 @@ function App() {
     }
 
     return (
-        <div className='books-wrapper'>
+        <>  
+            <div className="topbar">
+                <div className="topbar__logo">My Library</div>
+                <ModalTrigger onAddBook={handleAddBook}/>
+            </div>
+            <div className='books-wrapper'>
             {
                 books.map((book) => (
                     <Book
@@ -41,13 +55,13 @@ function App() {
                     />
                 ))
             }
-        </div>
+            </div>
+        </>
     );
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-        <Topbar />
         <App />
     </React.StrictMode>,
 );
